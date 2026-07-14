@@ -1,0 +1,51 @@
+<section id="home" class="hero">
+  <div class="hero__mesh" aria-hidden="true">
+    <span class="hero__blob hero__blob--a"></span>
+    <span class="hero__blob hero__blob--b"></span>
+    <span class="hero__grid"></span>
+  </div>
+
+  <div class="container hero__grid-layout">
+    <div class="hero__copy">
+      <p class="eyebrow" appReveal="fade">READY FOR PRODUCTION</p>
+
+      <h1 class="hero__title" appReveal="up">
+        {{ profile.name }} builds
+        <span class="gradient-text">AI systems</span>
+        and ships them.
+      </h1>
+
+      <p class="hero__lede" appReveal="up" [revealDelay]="80">
+        {{ profile.tagline }}
+      </p>
+
+      <div class="hero__cta" appReveal="up" [revealDelay]="160">
+        <a href="#projects" class="btn btn-primary">View my work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+
+      <div class="hero__meta" appReveal="fade" [revealDelay]="220">
+        <span class="hero__meta-item">📍 {{ profile.location }}</span>
+        <a class="hero__meta-item hero__meta-link" [href]="profile.github" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="hero__meta-item hero__meta-link" [href]="profile.linkedin" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+
+    <div class="hero__panel-wrap" appReveal="scale" [revealDelay]="120">
+      <div class="hero__panel glass-strong" role="img" aria-label="Terminal showing the engineer's stack and a successful production deploy">
+        <div class="hero__panel-bar">
+          <span class="hero__dot hero__dot--r"></span>
+          <span class="hero__dot hero__dot--y"></span>
+          <span class="hero__dot hero__dot--g"></span>
+          <span class="hero__panel-title">deploy.sh — production</span>
+        </div>
+        <pre class="hero__panel-body" aria-hidden="true"><code><span *ngFor="let line of renderedLines()" class="hero__line">{{ line }}</span><span class="hero__cursor">▍</span></code></pre>
+      </div>
+    </div>
+  </div>
+
+  <a href="#about" class="hero__scroll-cue" aria-label="Scroll to about section">
+    <span class="hero__scroll-line" aria-hidden="true"></span>
+    Scroll
+  </a>
+</section>

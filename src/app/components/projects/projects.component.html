@@ -1,0 +1,33 @@
+<section id="projects" class="section projects" [appSectionSpy]="'projects'">
+  <div class="container">
+    <div class="section-head" appReveal="up">
+      <p class="eyebrow">STAGE 04 · SHIP</p>
+      <h2 class="section-title">Selected projects</h2>
+      <p class="section-sub">From model to deployed service — the systems I've actually shipped.</p>
+    </div>
+
+    <div class="projects__grid">
+      <article
+        class="projects__card glass"
+        *ngFor="let project of projects; let i = index"
+        [class.projects__card--featured]="project.featured"
+        appReveal="up"
+        [revealDelay]="(i % 3) * 90"
+      >
+        <div class="projects__card-top">
+          <span class="tag" *ngIf="project.featured">Featured</span>
+          <h3 class="projects__name">{{ project.name }}</h3>
+          <p class="projects__summary">{{ project.summary }}</p>
+        </div>
+
+        <ul class="projects__points">
+          <li *ngFor="let point of project.points">{{ point }}</li>
+        </ul>
+
+        <div class="projects__stack">
+          <span class="tag" *ngFor="let tech of project.stack">{{ tech }}</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

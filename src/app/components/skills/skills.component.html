@@ -1,0 +1,24 @@
+<section id="skills" class="section skills" [appSectionSpy]="'skills'">
+  <div class="container">
+    <div class="section-head" appReveal="up">
+      <p class="eyebrow">STAGE 02 · TRAIN</p>
+      <h2 class="section-title">A stack built for the whole lifecycle</h2>
+      <p class="section-sub">Model training on one side, the infrastructure to run it on the other.</p>
+    </div>
+
+    <div class="skills__grid">
+      <div
+        class="skills__card glass"
+        *ngFor="let group of groups; let i = index"
+        appReveal="up"
+        [revealDelay]="i * 90"
+      >
+        <span class="tag skills__stage">{{ group.stage }}</span>
+        <h3 class="skills__title">{{ group.title }}</h3>
+        <div class="skills__chips">
+          <span class="skills__chip" *ngFor="let item of group.items">{{ item }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

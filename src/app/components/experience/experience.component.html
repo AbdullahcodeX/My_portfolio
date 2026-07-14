@@ -1,0 +1,41 @@
+<section id="experience" class="section experience" [appSectionSpy]="'experience'">
+  <div class="container">
+    <div class="section-head" appReveal="up">
+      <p class="eyebrow">STAGE 03 · DEPLOY</p>
+      <h2 class="section-title">Experience log</h2>
+      <p class="section-sub">Each role, read like a deploy history — most recent first.</p>
+    </div>
+
+    <ol class="timeline">
+      <li
+        class="timeline__item"
+        *ngFor="let job of jobs; let i = index"
+        appReveal="left"
+        [revealDelay]="i * 100"
+      >
+        <div class="timeline__marker" aria-hidden="true">
+          <span class="timeline__dot"></span>
+          <span class="timeline__line"></span>
+        </div>
+
+        <div class="timeline__card glass">
+          <div class="timeline__head">
+            <div>
+              <h3 class="timeline__role">{{ job.role }}</h3>
+              <p class="timeline__org">{{ job.org }} · {{ job.location }}</p>
+            </div>
+            <span class="tag timeline__period">{{ job.period }}</span>
+          </div>
+
+          <ul class="timeline__points">
+            <li *ngFor="let point of job.points">{{ point }}</li>
+          </ul>
+
+          <div class="timeline__tags">
+            <span class="tag" *ngFor="let tag of job.tags">{{ tag }}</span>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>

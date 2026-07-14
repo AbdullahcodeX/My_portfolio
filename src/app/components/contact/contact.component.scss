@@ -1,0 +1,117 @@
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 4.5rem);
+  align-items: start;
+}
+
+.contact__list {
+  margin-top: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.contact__list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact__label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+}
+
+.contact__value {
+  font-size: 1.02rem;
+  color: var(--text);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+a.contact__value:hover {
+  color: var(--accent-b);
+}
+
+.contact__socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact__socials a {
+  color: var(--text);
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.contact__socials a:hover {
+  color: var(--accent-b);
+  border-color: var(--accent-b);
+}
+
+.contact__form {
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact__field label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.contact__field input,
+.contact__field textarea {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  resize: vertical;
+  transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.contact__field input:focus,
+.contact__field textarea:focus {
+  border-color: var(--accent-a);
+  box-shadow: 0 0 0 3px rgba(91, 140, 255, 0.15);
+  outline: none;
+}
+
+.contact__submit {
+  justify-content: center;
+  margin-top: 0.3rem;
+}
+
+.contact__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.contact__note {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  text-align: center;
+}
+
+@media (max-width: 780px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+}

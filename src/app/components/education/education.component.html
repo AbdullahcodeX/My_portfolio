@@ -1,0 +1,30 @@
+<section id="education" class="section education" [appSectionSpy]="'education'">
+  <div class="container education__grid">
+    <div appReveal="up">
+      <p class="eyebrow">STAGE 05 · CERTIFY</p>
+      <h2 class="section-title">Education</h2>
+
+      <div class="education__card glass" *ngFor="let item of education">
+        <h3 class="education__school">{{ item.school }}</h3>
+        <p class="education__degree">{{ item.degree }}</p>
+        <div class="education__meta">
+          <span class="tag">{{ item.meta }}</span>
+          <span class="education__period">{{ item.period }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div appReveal="up" [revealDelay]="120">
+      <h2 class="section-title">Awards &amp; certifications</h2>
+      <ul class="education__awards">
+        <li class="education__award glass" *ngFor="let award of awards">
+          <span class="education__award-year">{{ award.year }}</span>
+          <div>
+            <p class="education__award-title">{{ award.title }}</p>
+            <p class="education__award-org">{{ award.org }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
